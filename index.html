@@ -143,7 +143,7 @@
   }
   .subjects{
     color:var(--muted);
-    font-size:0.75rem;
+    font-size:1rem;
     margin:0 0 4px;
   }
   .affiliation{
@@ -216,14 +216,14 @@
     padding:56px 24px 80px;
   }
   section{
-    margin-bottom:36px;
+    margin-bottom:56px;
     scroll-margin-top:70px;
   }
   .section-head{
     display:flex;
     align-items:baseline;
     gap:12px;
-    margin-bottom:2px;
+    margin-bottom:8px;
   }
   .section-head .bar{
     width:22px;
@@ -237,13 +237,16 @@
     margin:0;
   }
   section p{
-    margin:0 0 10px;
+    margin:0 0 14px;
   }
   ul.plain{
     margin:0;
     padding-left:20px;
   }
   ul.plain li{
+    margin-bottom:8px;
+  }
+  .education-list li{
     margin-bottom:2px;
   }
 
@@ -321,8 +324,20 @@
   .tl-entry .badge-row{
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
     margin-bottom:6px;
+  }
+  .tight-spacing .badge-row{
+    margin-bottom:0;
+  }
+  .tight-spacing .duration{
+    margin:0;
+  }
+  .tight-spacing p{
+    margin-bottom:0;
+  }
+  .tight-spacing p + p{
+    margin-top:2px;
   }
   .tl-entry .badge-row img{
     width:28px;
@@ -419,7 +434,7 @@
             </a>
             <a class="cv-btn" href="cv.pdf" target="_blank">Download CV</a>
           </div>
-          <p class="email-line">morshedrafi9@gmail.com</p>
+          <p class="email-line">558@heritagebd.net &nbsp;·&nbsp; morshedrafi9@gmail.com</p>
         </div>
       </div>
     </div>
@@ -427,32 +442,33 @@
       <a href="EUROGIN.html">
         <img src="images/top_photo.jpg" alt="Rafi presenting his poster at EUROGIN 2026">
       </a>
+      <p class="hero-caption">EUROGIN Congress 2026, Vienna, Austria</p>
     </div>
   </div>
+  <p class="feature-caption">Presenting at EUROGIN 2026, Vienna, Austria</p>
 </header>
 
 <main>
 
   <section id="about">
-    <div class="section-head"><h2>About</h2></div>
+    <div class="section-head"><div class="bar"></div><h2>About</h2></div>
     <p>I am an International A Level student at Heritage School, Bangladesh, with interests in biology, medicine, mathematics, and physics. My interest in biomedical research has led me to work with the Human Genetics Research and Training Center (HGRTC), contributing to HPV research and presenting related work at <strong>EUROGIN 2026 in Vienna, Austria</strong>.</p>
     <p>Beyond research, I enjoy teaching mathematics and leading community-focused projects, including the Heritage Pathshala Sustainability Initiative. I hope to continue exploring how science, quantitative thinking, and research can address meaningful real-world problems.</p>
   </section>
 
   <section id="education">
-    <div class="section-head"></div><h2>Education</h2></div>
-    <ul class="plain">
+    <div class="section-head"><div class="bar"></div><h2>Education</h2></div>
+    <ul class="plain education-list">
       <li>International General Certificate of Secondary Education (IGCSE), Edexcel, Pearson, UK</li>
       <li>International Advanced Level (IAL), Edexcel, Pearson, UK</li>
     </ul>
   </section>
 
   <section id="research">
-    <div class="section-head"><h2>Research &amp; Publication</h2></div>
+    <div class="section-head"><div class="bar"></div><h2>Research &amp; Publication</h2></div>
     <div class="pub-block">
-      <p class="pub-role">Research Contributor - Human Genetics Research and Training Center (HGRTC) Dec. 24 - May 25</p>
-      <p>Organized clinical sample data, performed statistical data analysis, and created data visualizations using Python ( Interna-
-tional Journal of Research in Medical Sciences, 2025) - (code available on GitHub)</p>
+      <p class="pub-role">Research Contributor — Contributed to a peer-reviewed HPV epidemiology study (Int J Res Med Sci, 2025)</p>
+      <p>Organized clinical sample data, performed data analysis, and created visualizations using Python.</p>
     </div>
     <div class="pub-block">
       <p class="pub-role">Publication</p>
@@ -461,8 +477,11 @@ tional Journal of Research in Medical Sciences, 2025) - (code available on GitHu
   </section>
 
   <section id="presentations">
-    <div class="section-head"><h2>Conference Presentations</h2></div>
+    <div class="section-head"><div class="bar"></div><h2>Conference Presentations</h2></div>
     <div class="conf-entry">
+      <a href="https://www.eurogin.com/api/next/download-file/EUROGIN2026-Abstracts-Posters-8e359e2261a9819d439463018babc43c.pdf" target="_blank">
+        <img src="images/EUROGIN2026.jpg" alt="EUROGIN 2026 poster thumbnail">
+      </a>
       <div class="conf-text">
         <p class="pub-role">Morshed, R., Islam, M., Rahman, M., &amp; Aslam, M. (2026)</p>
         <p>Presented research on the epidemiology, genotypic diversity and age-specific risk pattern of circulating human papillomavirus in Dhaka City, Bangladesh: a five-year study (2020&ndash;2024).</p>
@@ -472,7 +491,7 @@ tional Journal of Research in Medical Sciences, 2025) - (code available on GitHu
   </section>
 
   <section id="teaching">
-    <div class="section-head"><h2>Teaching Assistant</h2></div>
+    <div class="section-head"><div class="bar"></div><h2>Teaching</h2></div>
     <div class="timeline">
       <div class="tl-entry">
         <p class="tl-org">Heritage School, Narayanganj, Bangladesh</p>
@@ -488,17 +507,19 @@ tional Journal of Research in Medical Sciences, 2025) - (code available on GitHu
   </section>
 
   <section id="professional">
-    <div class="section-head"><h2>Professional</h2></div>
+    <div class="section-head"><div class="bar"></div><h2>Professional</h2></div>
     <div class="timeline">
-      <div class="tl-entry">
+      <div class="tl-entry tight-spacing">
         <div class="badge-row">
-          <span class="tl-org">Illumina: Introduction to Next-Generation Sequencing: DNA</span>
+          <a href="https://www.credly.com/badges/127e020d-e5d0-42ff-b60e-75c092e728e0" target="_blank"><img src="images/illumina.png" alt="Illumina badge"></a>
+          <span class="tl-org">Illumina Online Course: Introduction to Next-Generation Sequencing: DNA</span>
         </div>
         <p class="duration">Duration: 10.5 hours &nbsp;|&nbsp; Completed: January, 2026</p>
         <p>Covered: NGS workflow, sequencing principles, DNA library preparation, applications in Whole Genome Sequencing</p>
       </div>
       <div class="tl-entry">
         <div class="badge-row">
+          <a href="HGRTC.html"><img src="images/HGRTC_Logo.jpg" alt="HGRTC logo"></a>
           <span class="tl-org">Hands-on Training on Sanger Sequencing</span>
         </div>
         <p class="tl-date">HGRTC &nbsp;|&nbsp; Dec. 2024 – Dec. 2024</p>
@@ -506,6 +527,7 @@ tional Journal of Research in Medical Sciences, 2025) - (code available on GitHu
       </div>
       <div class="tl-entry">
         <div class="badge-row">
+          <a href="HGRTC.html"><img src="images/HGRTC_Logo.jpg" alt="HGRTC logo"></a>
           <span class="tl-org">Hands-on Training on Real-Time PCR</span>
         </div>
         <p class="tl-date">HGRTC &nbsp;|&nbsp; Mar. 2025 – Mar. 2025</p>
@@ -515,7 +537,7 @@ tional Journal of Research in Medical Sciences, 2025) - (code available on GitHu
   </section>
 
   <section id="founder">
-    <div class="section-head"><h2>Founder &amp; Student Lead — Heritage Pathshala Sustainability Initiative</h2></div>
+    <div class="section-head"><div class="bar"></div><h2>Founder &amp; Student Lead — Heritage Pathshala Sustainability Initiative</h2></div>
     <div class="timeline">
       <div class="tl-entry">
         <p class="tl-org">Heritage School, Narayanganj, Bangladesh</p>
@@ -530,15 +552,18 @@ tional Journal of Research in Medical Sciences, 2025) - (code available on GitHu
   </section>
 
   <section id="awards">
-    <div class="section-head"><h2>Awards</h2></div>
+    <div class="section-head"><div class="bar"></div><h2>Awards</h2></div>
     <div class="award-entry">
-      <a>Participated XXXIII International Philosophy Olympiad 2025, Bari, Italy</a>
+      <img src="images/po.png" alt="Philosophy Olympiad badge">
+      <a href="https://ipo2025.sfi.it/610/delegations.html" target="_blank">Participated XXXIII International Philosophy Olympiad 2025, Bari, Italy</a>
     </div>
     <div class="award-entry">
-      <a>Edexcel International High Achievers' Award 2025</a>
+      <img src="images/pearson.jpg" alt="Pearson Edexcel badge">
+      <a href="edexcel_IGCSE.html">Edexcel International High Achievers' Award 2025</a>
     </div>
     <div class="award-entry">
-      <a>The Daily Star Award 2025</a>
+      <img src="images/daily_star.jpg" alt="The Daily Star badge">
+      <a href="daily_star_IGCSE.html">The Daily Star Award 2025</a>
     </div>
   </section>
 
