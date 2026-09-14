@@ -120,6 +120,9 @@
   }
   .masthead-photo{
     flex:0 0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
   .masthead-photo img{
     width:132px;
@@ -128,9 +131,25 @@
     object-fit:cover;
     border:1px solid var(--rule);
   }
+  .photo-caption{
+    font-family:'Source Serif 4', serif;
+    font-weight:700;
+    font-size:1.15rem;
+    margin:10px 0 0;
+    color:var(--ink);
+    text-align:center;
+    white-space:nowrap;
+  }
   .masthead-text{
     flex:1 1 auto;
     min-width:220px;
+  }
+  .masthead-spacer{
+    height:38px;
+    background:var(--paper-raised);
+  }
+  .masthead-spacer-bottom{
+    height:18px;
   }
   h1.name{
     font-size:2.1rem;
@@ -454,9 +473,10 @@
       <div class="masthead-grid">
         <div class="masthead-photo">
           <img src="images/profile.jpg" alt="Portrait of Rafi A. Morshed">
+          <p class="photo-caption">Rafi A. Morshed</p>
         </div>
         <div class="masthead-text">
-          <h1 class="name">Rafi A. Morshed</h1>
+          <div class="masthead-spacer" aria-hidden="true"></div>
           <p class="subjects">Mathematics, Physics, Biology, Chemistry</p>
           <p class="affiliation">Heritage School, Narayanganj, Bangladesh</p>
           <div class="contact-row">
@@ -472,6 +492,7 @@
             <a class="cv-btn" href="cv.pdf" target="_blank">Download CV</a>
           </div>
           <p class="email-line">morshedrafi9@gmail.com</p>
+          <div class="masthead-spacer masthead-spacer-bottom" aria-hidden="true"></div>
         </div>
     </div>
       </div>
@@ -493,8 +514,8 @@
   <section id="education">
     <div class="section-head"><h3>Education</h3></div>
     <ul class="plain education-list">
-      <li>International Advanced Level (IAL), Edexcel, Pearson, UK</li>
       <li>International General Certificate of Secondary Education (IGCSE), Edexcel, Pearson, UK</li>
+      <li>International Advanced Level (IAL), Edexcel, Pearson, UK</li>
     </ul>
   </section>
 
