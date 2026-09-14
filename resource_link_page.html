@@ -2,158 +2,634 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Study Guides</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafi A. Morshed | Academic Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+  :root{
+    --paper:#FAF9F5;
+    --paper-raised:#F3F1E9;
+    --ink:#1E2A22;
+    --muted:#5B665F;
+    --green:#2E5B3E;
+    --green-dark:#20422C;
+    --amber:#A6672B;
+    --rule:#D9D4C4;
+    --rule-light:#E8E4D8;
+    --max:800px;
   }
-  .tables-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
   }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 700px;
+  h1,h2,h3,.serif{
+    font-family:'Source Serif 4', serif;
   }
-  caption {
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 10px;
+  a{color:var(--green-dark);}
+  a:hover{color:var(--amber);}
+  img{max-width:100%;display:block;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:2px;
   }
-  th, td {
-    border: 1px solid #000;
-    padding: 8px 12px;
-    text-align: left;
+
+  nav{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:rgba(250,249,245,0.92);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:1px solid var(--rule);
   }
-  th {
-    background-color: #f2f2f2;
+  .nav-inner{
+    max-width:920px;
+    margin:0 auto;
+    padding:14px 24px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 22px;
+    justify-content:center;
+  }
+  .nav-inner a{
+    text-decoration:none;
+    color:var(--muted);
+    font-size:14.5px;
+    font-weight:500;
+    padding:4px 2px;
+    border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav-inner a:hover{
+    color:var(--ink);
+    border-bottom-color:var(--rule);
+  }
+  .nav-inner a.active{
+    color:var(--green-dark);
+    border-bottom-color:var(--amber);
+  }
+
+  header.masthead{
+    max-width:920px;
+    margin:0 auto;
+    padding:16px 24px 20px;
+  }
+  .hero-card{
+    display:flex;
+    align-items:stretch;
+    border:1px solid var(--rule);
+    background:var(--paper-raised);
+    overflow:hidden;
+  }
+  .hero-left{
+    flex:1.05 1 0;
+    padding:36px 32px;
+  }
+  .hero-right{
+    flex:1 1 0;
+    border-left:1px solid var(--rule);
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .hero-right a{display:block;}
+  .hero-right img{
+    width:100%;
+    height:auto;
+    border:1px solid var(--rule);
+  }
+  .hero-caption{
+    text-align:center;
+    font-weight:600;
+    font-size:1.05rem;
+    margin:14px 0 0;
+  }
+  .masthead-grid{
+    display:flex;
+    gap:28px;
+    align-items:center;
+  }
+  .masthead-photo{
+    flex:0 0 auto;
+  }
+  .masthead-photo img{
+    width:132px;
+    height:132px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid var(--rule);
+  }
+  .masthead-text{
+    flex:1 1 auto;
+    min-width:220px;
+  }
+  h1.name{
+    font-size:2.1rem;
+    font-weight:700;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .subjects{
+    color:var(--muted);
+    font-size:0.75rem;
+    margin:0 0 4px;
+  }
+  .affiliation{
+    color:var(--muted);
+    font-size:.95rem;
+    margin:0 0 18px;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+  }
+  .icon-btn{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:1px solid var(--rule);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink);
+    text-decoration:none;
+    transition:background .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .icon-btn:hover{
+    background:var(--green-dark);
+    border-color:var(--green-dark);
+    color:#fff;
+  }
+  .icon-btn svg{width:17px;height:17px;fill:currentColor;}
+  .cv-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:8px 16px;
+    border-radius:20px;
+    background:var(--green-dark);
+    color:#fff;
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:500;
+    transition:background .15s ease;
+  }
+  .cv-btn:hover{
+    background:var(--amber);
+    color:#fff;
+  }
+  .email-line{
+    font-size:.88rem;
+    color:var(--muted);
+    margin-top:10px;
+  }
+
+  .feature-caption{
+    max-width:920px;
+    margin:14px auto 0;
+    padding:0 24px;
+    font-size:.82rem;
+    color:var(--muted);
+    margin-top:8px;
+    text-align:center;
+  }
+
+  main{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:36px 14px 60px;
+  }
+  section{
+    margin-bottom:56px;
+    scroll-margin-top:70px;
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    margin-bottom:2px;
+  }
+  .section-head h3{
+  font-size:1.15rem;
+  font-weight:600;
+  margin:0;
+}
+.section-head{
+  margin-bottom:6px;
+}
+  
+  .section-head .bar{
+    width:22px;
+    height:3px;
+    background:var(--amber);
+    flex:0 0 auto;
+  }
+  h2{
+    font-size:1.35rem;
+    font-weight:600;
+    margin:0;
+  }
+  section p{
+    margin:0 0 8px;
+  }
+  ul.plain{
+    margin:0;
+    padding-left:20px;
+  }
+  ul.plain li{
+    margin-bottom:4px;
+  }
+  .education-list li{
+  margin-bottom:1px;
+  line-height:1.35;
+}
+
+  .pub-block{
+    border-left:3px solid var(--green);
+    padding:4px 0 4px 18px;
+    margin:18px 0;
+  }
+  .pub-role{
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .pub-citation{
+    font-size:.95rem;
+    color:var(--muted);
+    font-style:italic;
+    line-height:1.6;
+  }
+  .pub-citation .authors-highlight{
+    color:var(--ink);
+    font-weight:600;
+    font-style:normal;
+  }
+  .pub-role + .duration{
+    font-style:italic;
+    font-size:.85rem;
+    color:var(--muted);
+    margin-top:-6px;
+  }
+  .pub-role .role-subject{
+    font-weight:400;
+  }
+
+  .conf-entry{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    border-left:3px solid var(--green);
+    padding:4px 0 4px 18px;
+  }
+  .conf-entry img{
+    width:64px;
+    border:1px solid var(--rule);
+    flex:0 0 auto;
+  }
+  .conf-text .venue{
+    color:var(--amber);
+    font-weight:500;
+  }
+  .conf-text .pub-role .role-label{
+    font-size:1.1rem;
+    font-weight:700;
+  }
+  .conf-text .pub-role .author-names{
+    font-weight:400;
+  }
+
+  .timeline{
+    border-left:1px solid var(--rule);
+    padding-left:22px;
+    margin-left:4px;
+  }
+  .tl-entry{
+    position:relative;
+    padding-bottom:15px;
+  }
+  .tl-entry:last-child{padding-bottom:0;}
+  .tl-entry::before{
+    content:"";
+    position:absolute;
+    left:-27px;
+    top:6px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--amber);
+  }
+  .tl-org{
+    font-weight:600;
+    margin-bottom:2px;
+  }
+  .tl-date{
+    font-size:.85rem;
+    color:var(--amber);
+    margin-bottom:10px;
+  }
+  
+  #founder ul.plain li{
+    text-align: justify;
+}
+  
+  .tl-entry .badge-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:6px;
+  }
+  .tight-spacing .badge-row{
+    margin-bottom:0;
+  }
+  .tight-spacing .duration,
+  .tight-spacing .tl-date{
+    margin:0;
+  }
+  .tight-spacing p{
+    margin-bottom:0;
+  }
+  .tight-spacing p + p{
+    margin-top:2px;
+  }
+  .tl-entry .badge-row img{
+    width:28px;
+    height:28px;
+    object-fit:cover;
+    border-radius:4px;
+    border:1px solid var(--rule);
+  }
+  .tl-entry .duration{
+    font-size:.85rem;
+    color:var(--muted);
+  }
+
+  .award-entry{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  padding:2px 0;
+  border-bottom:1px solid var(--rule-light);
+  line-height:1.3;
+}
+.award-entry p{
+  margin:0;
+}
+  .award-entry:last-child{border-bottom:none;}
+  .award-entry img{
+    width:30px;
+    height:30px;
+    object-fit:cover;
+    border-radius:4px;
+    border:1px solid var(--rule);
+  }
+  .award-entry a{
+    text-decoration:none;
+  }
+  .award-entry a:hover{
+    text-decoration:underline;
+  }
+
+  footer{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 24px 60px;
+    font-size:.82rem;
+    color:var(--muted);
+    border-top:1px solid var(--rule);
+    padding-top:20px;
+  }
+
+  @media (max-width:700px){
+    header.masthead{padding:28px 20px 32px;}
+    .hero-card{flex-direction:column;}
+    .hero-right{border-left:none;border-top:1px solid var(--rule);}
+    .masthead-grid{flex-direction:column;text-align:center;align-items:center;}
+    .contact-row{justify-content:center;}
+    main{padding:44px 20px 64px;}
+    .conf-entry{flex-direction:column;}
+  }
+  #about{
+    max-width:800px;
+    width:100%;
+    position:relative;
+    left:50%;
+    transform:translateX(-50%);
+  }
+  #about p{
+    text-align: justify;
   }
 </style>
 </head>
 <body>
 
-<div class="tables-wrapper">
+<nav>
+  <div class="nav-inner" id="site-nav">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#research">Research</a>
+    <a href="#presentations">Presentations</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#professional">Professional</a>
+    <a href="#founder">Founder &amp; Lead</a>
+    <a href="#awards">Awards</a>
+    <a href="https://morshedrafi9.github.io/resource_link_page.html">Resources</a>
+  </div>
+</nav>
 
-  <!-- LEFT TABLE -->
-  <table>
-    <caption>Subject-Specific Study Guides</caption>
-    <thead>
-      <tr>
-        <th>Units/Sub</th>
-        <th>Mathematics</th>
-        <th>Physics</th>
-        <th>Biology</th>
-        <th>Chemistry</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Unit-1</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Unit-2</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><a href="resources/chemistry-unit2.pdf" target="_blank">Chemistry Guide</a></td>
-      </tr>
-      <tr>
-        <td>Unit-3</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Unit-4</td>
-        <td></td>
-        <td><a href="resources/physics-unit4.pdf" target="_blank">Physics Guide</a></td>
-        <td><a href="resources/biology-unit4.pdf" target="_blank">Biology Guide</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Unit-5</td>
-        <td></td>
-        <td></td>
-        <td><a href="resources/biology-unit5.pdf" target="_blank">Biology Guide</a></td>
-        <td><a href="resources/chemistry-unit5.pdf" target="_blank">Chemistry Guide</a></td>
-      </tr>
-      <tr>
-        <td>Unit-6</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+<header class="masthead">
+  <div class="hero-card">
+    <div class="hero-left">
+      <div class="masthead-grid">
+        <div class="masthead-photo">
+          <img src="images/profile.jpg" alt="Portrait of Rafi A. Morshed">
+        </div>
+        <div class="masthead-text">
+          <h1 class="name">Rafi A. Morshed</h1>
+          <p class="subjects">Mathematics, Physics, Biology, Chemistry</p>
+          <p class="affiliation">Heritage School, Narayanganj, Bangladesh</p>
+          <div class="contact-row">
+            <a class="icon-btn" href="https://scholar.google.com/citations?hl=en&user=HvKqOsQAAAAJ" aria-label="Google Scholar" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V17h2V8L12 2zM6 14.5v3.7L12 22l6-3.8v-3.7L12 18l-6-3.5z"/></svg>
+            </a>
+            <a class="icon-btn" href="https://www.linkedin.com/in/rafi-ahammed-morshed-932962256/" aria-label="LinkedIn" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.66 4.78 6.11V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
+            </a>
+            <a class="icon-btn" href="https://github.com/morshedrafi9/" aria-label="GitHub" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.66.5 12.03c0 5.1 3.29 9.42 7.86 10.95.57.11.78-.25.78-.55v-2.14c-3.2.7-3.87-1.37-3.87-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.17v3.22c0 .31.21.67.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.66 18.35.5 12 .5z"/></svg>
+            </a>
+            <a class="cv-btn" href="cv.pdf" target="_blank">Download CV</a>
+          </div>
+          <p class="email-line">morshedrafi9@gmail.com</p>
+        </div>
+    </div>
+      </div>
+    <div class="hero-right">
+      <a href="EUROGIN.html">
+        <img src="images/top_photo.jpg" alt="Rafi presenting his poster at EUROGIN 2026">
+      </a>
+    </div>
+  </div>
+</header>
 
-  <!-- RIGHT TABLE -->
-  <table>
-    <caption>Rapid Revision Summaries</caption>
-    <thead>
-      <tr>
-        <th>Units/Sub</th>
-        <th>Mathematics</th>
-        <th>Physics</th>
-        <th>Biology</th>
-        <th>Chemistry</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Unit-1</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Unit-2</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Unit-3</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Unit-4</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Unit-5</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Unit-6</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+<main>
 
-</div>
+  <section id="about">
+   <p>I am an International A Level student at Heritage School, Narayanganj, Bangladesh, with interests in biology, medicine, mathematics, and physics. My interest in biomedical research has led me to work with the Human Genetics Research and Training Center (HGRTC), contributing to HPV research and presenting related work at <strong>EUROGIN 2026 in Vienna, Austria</strong>.</p>
+    <p>Beyond research, I enjoy teaching mathematics and leading community-focused projects, including the Heritage Pathshala Sustainability Initiative. I hope to continue exploring how science, quantitative thinking, and research can address meaningful real-world problems.</p>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><h3>Education</h3></div>
+    <ul class="plain education-list">
+      <li>International General Certificate of Secondary Education (IGCSE), Edexcel, Pearson, UK</li>
+      <li>International Advanced Level (IAL), Edexcel, Pearson, UK</li>
+    </ul>
+  </section>
+
+  <section id="research">
+    <div class="pub-block">
+      <p class="pub-role">Student Researcher & Co-Author — HPV Epidemiology</p>
+      <p class="duration">Human Genetics Research and Training Centre (HGRTC), Dhaka, Bangladesh|&nbsp; Dec. 2024 – May 2025</p>
+      <p>Organized clinical sample data, performed data analysis, and created visualizations using Python.</p>
+    </div>
+    <div class="pub-block">
+      <p class="pub-role">Publication</p>
+      <p class="pub-citation">M. Arifur Rahman, M. Rafiqul Islam, M. Nabil Hasan, M. Sefaut Ullah, Israt Jahan, <span class="authors-highlight">Rafi A. Morshed</span>, et al. (2025). Epidemiology, genotypic diversity and age-specific risk pattern of circulating human papillomavirus in Dhaka City, Bangladesh: a five-year study (2020&ndash;2024). <em>International Journal of Research in Medical Sciences, 13(7), 2781&ndash;2787</em>. <a href="https://www.msjonline.org/index.php/ijrms/article/view/15313" target="_blank">DOI<span style="text-decoration:none;"> &#8599;</span></a></p>
+    </div>
+  </section>
+
+  <section id="presentations">
+    <div class="conf-entry">
+      <div class="conf-text">
+        <p class="pub-role"><span class="role-label">Poster Presentation&nbsp;—</span><span class="author-names"> &nbsp; Morshed, R.(Presenting Author), Islam, M., Rahman, M., &amp; Aslam, M.</span></p>
+        <p>Presented research on the epidemiology, genotypic diversity and age-specific risk pattern of circulating human papillomavirus in Dhaka City, Bangladesh: a five-year study (2020&ndash;2024).</p>
+        <span class="venue">EUROGIN 2026, Vienna, Austria</span>
+        <span>[<a href="https://www.eurogin.com/api/next/download-file/EUROGIN2026-Abstracts-Posters-8e359e2261a9819d439463018babc43c.pdf" target="_blank">Abstract #12369<span style="text-decoration:none;"> &#8599;</span></a>]</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <div class="timeline">
+      <div class="tl-entry">
+        <p class="pub-role"><span class="role-label">Peer Teaching Assistant</span> <span class="role-subject">(Physics &amp; Mathematics, Grade 9/10)</span></p>
+        <p class="duration">Heritage School, Narayanganj, Bangladesh &nbsp;|&nbsp; Jan. – Dec. 2025:12Mo</p>
+        <ul class="plain">
+          <li>Assisted the teacher in Grade 9 and 10 physics and mathematics classes (26 and 21 students respectively).</li>
+          <li>Held weekly 90-minute help sessions for each class, guiding students through challenging problems step by step.</li>
+          <li>Graded practice papers, mock questions, and homework sets under teacher supervision.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="professional">
+    <div class="timeline">
+      <div class="tl-entry tight-spacing">
+        <div class="badge-row">
+          <span class="tl-org">Illumina: Introduction to Next-Generation Sequencing: DNA</span>
+        </div>
+        <p class="duration">Duration: 10.5 hours &nbsp;|&nbsp; Completed: January, 2026</p>
+        <p>Covered: NGS workflow, sequencing principles, DNA library preparation, applications in Whole Genome Sequencing. <a href="https://www.credly.com/badges/127e020d-e5d0-42ff-b60e-75c092e728e0/linked_in_profile" target="_blank">Credential<span style="text-decoration:none;"> &#8599;</span></a></p>
+      </div>
+      <div class="tl-entry tight-spacing">
+        <div class="badge-row">
+          <span class="tl-org">Hands-on Training on Sanger Sequencing</span>
+        </div>
+        <p class="tl-date">HGRTC &nbsp;|&nbsp; Dec. – Dec. 2024</p>
+        <p>Core aspects of Sanger sequencing, including DNA extraction, amplification, and sequencing analysis.</p>
+      </div>
+      <div class="tl-entry tight-spacing">
+        <div class="badge-row">
+          <span class="tl-org">Hands-on Training on Real-Time PCR</span>
+        </div>
+        <p class="tl-date">HGRTC &nbsp;|&nbsp; Mar. – Mar. 2025</p>
+        <p>Understanding of qPCR principles and interpreting data with accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="section-head"><h3>Founder &amp; Student Lead — Heritage Pathshala Sustainability Initiative</h3></div>
+    <div class="timeline">
+      <div class="tl-entry">
+        <p class="tl-org">Heritage School, Narayanganj, Bangladesh</p>
+        <p class="tl-date">Oct. – Sept. 2026</p>
+        <ul class="plain">
+          <li>Founded and led a 32-student volunteer team to design and launch a sustainable funding model for Heritage Pathshala, a free primary school supporting 38 underprivileged children at risk of child labor, drawing on prior leadership experience from the school's Food Bank project.</li>
+          <li>Organized 3 alumni outreach seminars on program impact and financial transparency, raising BDT 672,000 and growing the alumni donor base from Jan.26 - Jun.26, 71 to 82 contributors.</li>
+          <li>Introduced a twice-daily meal program that supported student enrollment growth from 38 to 54 and improved retention; built a self-sustaining framework through alternate-year alumni giving, annual donor recognition, and integration with school administration, enabling the initiative to operate independently.</li>
+        </ul>
+      </div>
+      <div class="tl-entry">
+        <p class="tl-org">Exam-Prep Resource Development (Volunteer)</p>
+        <p class="tl-date">Feb. &ndash; Jun. 2026 (5 mos.)</p>
+        <ul class="plain">
+          <li>Analyzed recurring concepts, question patterns, and mark schemes across past examinations to identify the topics and question types students most often struggle with.</li>
+          <li>Compiled subject-specific study guides distilling these findings into clear, exam-focused reference material.</li>
+          <li>Created rapid revision summaries designed for efficient last-minute review before exams.</li>
+          <li>Distributed all resources freely to junior IGCSE/IAL students, prioritizing accessibility over monetization. <a href="#">See the guides</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="section-head"><h3>Awards</h3></div>
+    <div class="award-entry">
+      <p>Participant, XXXIII International Philosophy Olympiad, Bari, Italy, 2025. <a href="#" target="_blank">Official Record<span style="text-decoration:none;"> &#8599;</span></a></p>
+    </div>
+    <div class="award-entry">
+      <p>Edexcel International High Achievers' Award 2025</p>
+    </div>
+    <div class="award-entry">
+      <p>The Daily Star Award 2025</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Last updated: February, 2026
+</footer>
+
+<script>
+  document.querySelectorAll('#site-nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+
+  const navLinks = document.querySelectorAll('#site-nav a[href^="#"]');
+  const sections = Array.from(navLinks).map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = '#' + entry.target.id;
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === id));
+      }
+    });
+  }, {rootMargin: '-40% 0px -55% 0px'});
+
+  sections.forEach(s => observer.observe(s));
+</script>
 
 </body>
 </html>
