@@ -37,13 +37,11 @@
   a:hover{color:var(--amber);}
   img{max-width:100%;display:block;}
 
-  /* ---- Skip link / focus ---- */
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--amber);
     outline-offset:2px;
   }
 
-  /* ---- Nav ---- */
   nav{
     position:sticky;
     top:0;
@@ -79,7 +77,6 @@
     border-bottom-color:var(--amber);
   }
 
-  /* ---- Masthead ---- */
   header.masthead{
     max-width:920px;
     margin:0 auto;
@@ -198,7 +195,6 @@
     margin-top:10px;
   }
 
-  /* ---- Feature caption (below hero card) ---- */
   .feature-caption{
     max-width:920px;
     margin:14px auto 0;
@@ -209,7 +205,6 @@
     text-align:center;
   }
 
-  /* ---- Main content ---- */
   main{
     max-width:var(--max);
     margin:0 auto;
@@ -260,7 +255,6 @@
   line-height:1.35;
 }
 
-  /* ---- Publication / citation block ---- */
   .pub-block{
     border-left:3px solid var(--green);
     padding:4px 0 4px 18px;
@@ -291,7 +285,6 @@
     font-weight:400;
   }
 
-  /* ---- Conference entry ---- */
   .conf-entry{
     display:flex;
     gap:18px;
@@ -316,7 +309,6 @@
     font-weight:400;
   }
 
-  /* ---- Timeline (Teaching / Professional / Founder) ---- */
   .timeline{
     border-left:1px solid var(--rule);
     padding-left:22px;
@@ -383,7 +375,6 @@
     color:var(--muted);
   }
 
-  /* ---- Awards ---- */
   .award-entry{
   display:flex;
   align-items:center;
@@ -438,53 +429,6 @@
   }
   #about p{
     text-align: justify;
-  }
-
-  body {
-    background-color: #f7f5f0;
-    font-family: Georgia, 'Times New Roman', serif;
-    padding: 30px;
-  }
-
-  .entry-title {
-    font-size: 19px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0 0 10px 0;
-  }
-
-  .entry-date-line {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-
-  .entry-date {
-    font-size: 14px;
-    color: #c17a3d;
-    font-family: Arial, sans-serif;
-  }
-
-  .entry-bullets {
-    margin: 0 0 0 28px;
-    padding: 0;
-    list-style-type: disc;
-  }
-
-  .entry-bullets li {
-    font-size: 15px;
-    color: #2b2b2b;
-    line-height: 1.6;
-    margin-bottom: 8px;
-    font-family: Arial, sans-serif;
-  }
-
-  .see-guides {
-    color: #1a5fb4;
-    text-decoration: underline;
-    font-size: 15px;
-    font-family: Arial, sans-serif;
   }
 </style>
 </head>
@@ -628,24 +572,18 @@
           <li>Introduced a twice-daily meal program that supported student enrollment growth from 38 to 54 and improved retention; built a self-sustaining framework through alternate-year alumni giving, annual donor recognition, and integration with school administration, enabling the initiative to operate independently.</li>
         </ul>
       </div>
+      <div class="tl-entry">
+        <p class="tl-org">Exam-Prep Resource Development (Volunteer)</p>
+        <p class="tl-date">Feb. &ndash; Jun. 2026 (5 mos.)</p>
+        <ul class="plain">
+          <li>Analyzed recurring concepts, question patterns, and mark schemes across past examinations to identify the topics and question types students most often struggle with.</li>
+          <li>Compiled subject-specific study guides distilling these findings into clear, exam-focused reference material.</li>
+          <li>Created rapid revision summaries designed for efficient last-minute review before exams.</li>
+          <li>Distributed all resources freely to junior IGCSE/IAL students, prioritizing accessibility over monetization. <a href="#">See the guides</a></li>
+        </ul>
+      </div>
     </div>
   </section>
-
-  <div class="entry-title">Exam-Prep Resource Development (Volunteer)</div>
-
-  <div class="entry-date-line">
-    <span class="circle-marker"></span>
-    <span class="entry-date">Feb. &ndash; Jun. 2026 (5 mos.)</span>
-  </div>
-
-  <ul class="entry-bullets">
-    <li>Analyzed recurring concepts, question patterns, and mark schemes across past examinations to identify the topics and question types students most often struggle with.</li>
-    <li>Compiled subject-specific study guides distilling these findings into clear, exam-focused reference material.</li>
-    <li>Created rapid revision summaries designed for efficient last-minute review before exams.</li>
-    <li>Distributed all resources freely to junior IGCSE/IAL students, prioritizing accessibility over monetization.<br>
-      <a class="see-guides" href="#">See the guides</a>
-    </li>
-  </ul>
 
   <section id="awards">
     <div class="section-head"><h3>Awards</h3></div>
@@ -667,7 +605,6 @@
 </footer>
 
 <script>
-  // Smooth scroll for in-page nav links
   document.querySelectorAll('#site-nav a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       const target = document.querySelector(link.getAttribute('href'));
@@ -678,7 +615,6 @@
     });
   });
 
-  // Highlight active nav link on scroll
   const navLinks = document.querySelectorAll('#site-nav a[href^="#"]');
   const sections = Array.from(navLinks).map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
 
