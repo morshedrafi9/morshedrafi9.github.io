@@ -10,9 +10,23 @@
   }
 
   .intro-block {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 40px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
     text-align: left;
+  }
+
+  .intro-photo {
+    width: 170px;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .intro-text {
+    flex: 1;
   }
 
   .intro-spark {
@@ -20,12 +34,14 @@
     font-size: 15px;
     color: #444;
     margin-bottom: 14px;
+    margin-top: 0;
   }
 
   .intro-message {
     font-size: 16px;
     line-height: 1.7;
     color: #1a1a1a;
+    margin: 0;
   }
 
   .tables-wrapper {
@@ -69,8 +85,11 @@
 <body>
 
 <div class="intro-block">
-  <p class="intro-spark">This idea sparked suddenly in my head after nearly two and a half years of hard work, just before my final IAL session.</p>
-  <p class="intro-message">Success is rarely a solitary thing. A good result doesn't merely shape a good student — it quietly gives birth to a proud mother, a proud father, a few proud teachers, and the well-wishers who stand close around them, whose eyes well up without their even noticing, as if joy had found its own way out. We spend so much of life chasing our own achievements, yet the truest measure of them lies in how gently they ripple into others. If even one student finds benefit in this small creation of mine, then this effort of mine will find its fulfillment.</p>
+  <img class="intro-photo" src="images/portal.jpg" alt="Portrait of Rafi A. Morshed">
+  <div class="intro-text">
+    <p class="intro-spark">This idea sparked suddenly in my head after nearly two and a half years of hard work, just before my final IAL session.</p>
+    <p class="intro-message">Success is rarely a solitary thing. A good result doesn't merely shape a good student — it quietly gives birth to a proud mother, a proud father, a few proud teachers, and the well-wishers who stand close around them, whose eyes well up without their even noticing, as if joy had found its own way out. We spend so much of life chasing our own achievements, yet the truest measure of them lies in how gently they ripple into others. If even one student finds benefit in this small creation of mine, then this effort of mine will find its fulfillment.</p>
+  </div>
 </div>
 
 <div class="tables-wrapper">
