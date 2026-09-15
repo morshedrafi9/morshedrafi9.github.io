@@ -308,8 +308,8 @@
     content:"";
     position:absolute;
     left:0;
-    top:8px;
-    bottom:8px;
+    top:16px;
+    bottom:16px;
     width:3px;
     background:var(--green);
   }
@@ -342,8 +342,17 @@
     display:flex;
     gap:18px;
     align-items:flex-start;
-    border-left:3px solid var(--green);
+    position:relative;
     padding:4px 0 4px 18px;
+  }
+  .conf-entry::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:16px;
+    bottom:16px;
+    width:3px;
+    background:var(--green);
   }
   .conf-entry img{
     width:64px;
