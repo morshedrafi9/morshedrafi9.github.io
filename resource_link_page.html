@@ -53,6 +53,10 @@
     flex-wrap: wrap;
   }
 
+  .tables-wrapper + .tables-wrapper {
+    margin-top: 40px;
+  }
+
   .table-block {
     flex: 1;
     min-width: 340px;
@@ -69,6 +73,11 @@
     width: 100%;
   }
 
+  table.paper-table {
+    width: 55%;
+    min-width: 300px;
+  }
+
   th, td {
     border: 1px solid #000;
     padding: 8px 10px;
@@ -83,6 +92,10 @@
   td:first-child, th:first-child {
     font-weight: normal;
   }
+
+  .paper-table td:first-child {
+    white-space: nowrap;
+  }
 </style>
 </head>
 <body>
@@ -95,6 +108,7 @@
   </div>
 </div>
 
+<!-- ===== IAL TABLES ===== -->
 <div class="tables-wrapper">
 
   <div class="table-block">
@@ -141,14 +155,12 @@
          <td><a href="resources/IAL/IAL_Chemistry_Unit5.pdf" target="_blank" style="text-decoration:none;">Chemistry-Unit5</a></td>
       </tr>
 
-      
       <tr><td>Unit-6</td>
         <td></td>
        <td><a href="resources/IAL/IAL_Physics_Unit6.pdf" target="_blank" style="text-decoration:none;">Physics-Unit6</a></td>
         <td><a href="resources/IAL/IAL_Biology_Unit6.pdf" target="_blank" style="text-decoration:none;">Biology-Unit6</a></td>
         <td><a href="resources/IAL/IAL_Chemistry_Unit6.pdf" target="_blank" style="text-decoration:none;">Chemistry-Unit6</a></td>
       </tr>
-      
     </table>
   </div>
 
@@ -202,7 +214,51 @@
          <td><a href="resources/IAL/Biology_Unit6_Rapid_Revision.pdf" target="_blank" style="text-decoration:none;">Biology-Unit6</a></td>
        <td><a href="resources/IAL/Chemistry_Unit6_Rapid_Revision.pdf" target="_blank" style="text-decoration:none;">Chemistry-Unit6</a></td>
       </tr>
-      
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== IGCSE TABLES ===== -->
+<div class="tables-wrapper">
+
+  <div class="table-block">
+    <div class="table-title">Subject-Specific Study Guides (IGCSE)</div>
+    <table class="paper-table">
+      <tr>
+        <th></th>
+        <th>Paper 1</th>
+        <th>Paper 2</th>
+      </tr>
+      <tr><td>Bangla</td><td></td><td></td></tr>
+      <tr><td>Biology</td><td></td><td></td></tr>
+      <tr><td>Chemistry</td><td></td><td></td></tr>
+      <tr><td>Eng. Language</td><td></td><td></td></tr>
+      <tr><td>Fa. Pu. Math</td><td></td><td></td></tr>
+      <tr><td>Hu. Biology</td><td></td><td></td></tr>
+      <tr><td>Math-A</td><td></td><td></td></tr>
+      <tr><td>Math-B</td><td></td><td></td></tr>
+      <tr><td>Physics</td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="table-block">
+    <div class="table-title">Night Before The Exam (IGCSE)</div>
+    <table class="paper-table">
+      <tr>
+        <th></th>
+        <th>Paper 1</th>
+        <th>Paper 2</th>
+      </tr>
+      <tr><td>Bangla</td><td></td><td></td></tr>
+      <tr><td>Biology</td><td></td><td></td></tr>
+      <tr><td>Chemistry</td><td></td><td></td></tr>
+      <tr><td>Eng. Language</td><td></td><td></td></tr>
+      <tr><td>Fa. Pu. Math</td><td></td><td></td></tr>
+      <tr><td>Hu. Biology</td><td></td><td></td></tr>
+      <tr><td>Math-A</td><td></td><td></td></tr>
+      <tr><td>Math-B</td><td></td><td></td></tr>
+      <tr><td>Physics</td><td></td><td></td></tr>
     </table>
   </div>
 
