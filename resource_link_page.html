@@ -9,6 +9,44 @@
     background: #ffffff;
   }
 
+  .home-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(#3a9be0, #1468b8);
+    border: 1px solid #0f5a9e;
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+
+  .home-btn svg {
+    width: 13px;
+    height: 13px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .home-btn span {
+    font-size: 5.5px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  .home-btn:hover {
+    background: linear-gradient(#1468b8, #0f5a9e);
+  }
+
   .intro-block {
     max-width: 900px;
     margin: 0 0 40px 0;
@@ -99,6 +137,15 @@
 </style>
 </head>
 <body>
+
+<a class="home-btn" href="index.html" aria-label="Return to home page">
+  <svg viewBox="0 0 24 24">
+    <path d="M3 11 L12 3 L21 11"/>
+    <path d="M6 9.5 V20 H18 V9.5"/>
+    <path d="M10 20 V14 H14 V20"/>
+  </svg>
+  <span>HOME</span>
+</a>
 
 <div class="intro-block">
   <img class="intro-photo" src="images/portal.jpg" alt="Portrait of Rafi A. Morshed">
